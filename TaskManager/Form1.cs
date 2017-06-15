@@ -64,6 +64,28 @@ namespace TaskManager
                 ListAllRunningProcesses();
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("shutdown"," /s /t ");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("shutdown", " /r /t ");
+        }
     }
 }
 
