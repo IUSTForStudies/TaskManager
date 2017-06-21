@@ -16,25 +16,38 @@ namespace TaskManager
         {
             InitializeComponent();
             ListAllRunningProcesses();
+            ImWillBreakYou(); 
+
         }
 
         Process[] processList;
-
+        List<long> allMemoryBaby = new List<long>();
+        double allMamoryGB = 0;
          public void ListAllRunningProcesses()
          {
             listView1.Items.Clear();
             processList = Process.GetProcesses();
+
+         
            
             foreach (var p in processList)
             {
                ListViewItem v = new ListViewItem(p.ProcessName);
-               v.SubItems.Add($"{p.Id}");
-                v.SubItems.Add($"{p.VirtualMemorySize64 /1000000}");
+               v.SubItems.Add(p.Id.ToString());
+                long allMemory = p.VirtualMemorySize64 / 1000000;
+                allMemoryBaby.Add(allMemory);
+                allMamoryGB += allMemory;
+                v.SubItems.Add(allMemory.ToString());
                listView1.Items.Add(v);
             }
          }
 
+         public void ImWillBreakYou() 
 
+         {
+             label2.Text = (allMamoryGB / 10000).ToString();
+             label4.Text = allMemoryBaby.Capacity.ToString();
+         }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -63,6 +76,16 @@ namespace TaskManager
                 p.Start();
                 ListAllRunningProcesses();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

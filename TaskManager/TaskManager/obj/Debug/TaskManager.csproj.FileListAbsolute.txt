@@ -7,3 +7,12 @@ C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.Properties.Resource
 C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.GenerateResource.Cache
 C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.exe
 C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.pdb
+D:\Git\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe.config
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.exe
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.pdb
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csprojResolveAssemblyReference.cache
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.Form1.resources
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.Properties.Resources.resources
+D:\Git\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.GenerateResource.Cache
+D:\Git\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe
+D:\Git\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.pdb
