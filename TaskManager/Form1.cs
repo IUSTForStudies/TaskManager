@@ -20,19 +20,20 @@ namespace TaskManager
 
         Process[] processList;
 
-         public void ListAllRunningProcesses()
-         {
+        public void ListAllRunningProcesses()
+        {
             listView1.Items.Clear();
             processList = Process.GetProcesses();
-           
+
             foreach (var p in processList)
             {
-               ListViewItem v = new ListViewItem(p.ProcessName);
-               v.SubItems.Add($"{p.Id}");
-                v.SubItems.Add($"{p.VirtualMemorySize64 /1000000}");
-               listView1.Items.Add(v);
+                ListViewItem v = new ListViewItem(p.ProcessName);
+                v.SubItems.Add($"{p.Id}");
+                v.SubItems.Add($"{p.VirtualMemorySize64 / 1000000}");
+                v.SubItems.Add($"{p.WorkingSet64 / 1000000 }");
+                listView1.Items.Add(v);
             }
-         }
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace TaskManager
                 processList[index].Kill();
                 ListAllRunningProcesses();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -59,11 +60,19 @@ namespace TaskManager
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 Process p = new Process();
-                p.StartInfo.FileName =textBox1.Text;
+                p.StartInfo.FileName = textBox1.Text;
                 p.Start();
                 ListAllRunningProcesses();
             }
+
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        {
+        }
+
     }
 }
 

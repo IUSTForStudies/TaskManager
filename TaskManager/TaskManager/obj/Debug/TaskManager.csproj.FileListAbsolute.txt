@@ -1,9 +1,0 @@
-C:\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe.config
-C:\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe
-C:\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.pdb
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csprojResolveAssemblyReference.cache
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.Form1.resources
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.Properties.Resources.resources
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.GenerateResource.Cache
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.exe
-C:\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.pdb
