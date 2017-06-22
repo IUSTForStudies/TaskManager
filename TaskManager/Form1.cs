@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Management;
+
+
 namespace TaskManager
 {
     public partial class Form1 : Form
@@ -16,6 +18,7 @@ namespace TaskManager
         {
             InitializeComponent();
             ListAllRunningProcesses();
+            PC();
         }
 
         Process[] processList;
@@ -33,7 +36,6 @@ namespace TaskManager
                listView1.Items.Add(v);
             }
          }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -65,26 +67,26 @@ namespace TaskManager
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chartToolStripMenuItem_Click(object sender, EventArgs e)
+        public void PC()
         {
             
-            Form2 form = new Form2();
-            form.ShowDialog();
+
+            ObjectQuery winQuery = new ObjectQuery("SELECT * FROM Win32_LogicalMemoryConfiguration");
+
+            ManagementObjectSearcher searcher11 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
+
+            foreach (ManagementObject item in searcher11.Get())
+            {
+               label5.Text = item["AdapterRAM"].ToString();
+               label6.Text = item["Caption"].ToString();
+               label7.Text = item["Description"].ToString();
+               label8.Text = item["VideoProcessor"].ToString();
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("shutdown"," /s /t ");
-        }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("shutdown", " /r /t ");
         }
     }
 }
