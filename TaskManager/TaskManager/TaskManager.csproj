@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,8 +53,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="C:\TaskManager\Form2.cs">
-      <Link>Form2.cs</Link>
       <SubType>Form</SubType>
+      <Link>Form2.cs</Link>
     </Compile>
     <Compile Include="C:\TaskManager\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -92,12 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Без названия.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgpag6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

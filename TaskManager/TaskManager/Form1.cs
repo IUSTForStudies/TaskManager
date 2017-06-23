@@ -16,39 +16,24 @@ namespace TaskManager
         {
             InitializeComponent();
             ListAllRunningProcesses();
-            ImWillBreakYou();
-            PC();
         }
 
         Process[] processList;
-        List<long> allMemoryBaby = new List<long>();
-        double allMamoryGB = 0;
-        public void ListAllRunningProcesses()
-        {
+
+         public void ListAllRunningProcesses()
+         {
             listView1.Items.Clear();
             processList = Process.GetProcesses();
-
-
-
+           
             foreach (var p in processList)
             {
-                ListViewItem v = new ListViewItem(p.ProcessName);
-                v.SubItems.Add(p.Id.ToString());
-                long allMemory = p.VirtualMemorySize64 / 1000000;
-                allMemoryBaby.Add(allMemory);
-                allMamoryGB += allMemory;
-                v.SubItems.Add(allMemory.ToString());
-                v.SubItems.Add($"{p.WorkingSet64 / 1000000 }");
-                listView1.Items.Add(v);
+               ListViewItem v = new ListViewItem(p.ProcessName);
+               v.SubItems.Add($"{p.Id}");
+                v.SubItems.Add($"{p.VirtualMemorySize64 /1000000}");
+               listView1.Items.Add(v);
             }
-        }
+         }
 
-        public void ImWillBreakYou()
-
-        {
-            label2.Text = (allMamoryGB / 100000).ToString();
-            label4.Text = allMemoryBaby.Capacity.ToString();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -100,28 +85,6 @@ namespace TaskManager
         private void button4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("shutdown", " /r /t ");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void PC()
-        {
-
-
-            ObjectQuery winQuery = new ObjectQuery("SELECT * FROM Win32_LogicalMemoryConfiguration");
-
-            ManagementObjectSearcher searcher11 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
-
-            foreach (ManagementObject item in searcher11.Get())
-            {
-                label5.Text = item["AdapterRAM"].ToString();
-                label6.Text = item["Caption"].ToString();
-                label7.Text = item["Description"].ToString();
-                label8.Text = item["VideoProcessor"].ToString();
-            }
         }
     }
 }
